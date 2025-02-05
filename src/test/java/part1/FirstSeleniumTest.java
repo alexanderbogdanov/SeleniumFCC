@@ -16,7 +16,7 @@ public class FirstSeleniumTest {
     WebDriver driver;
 
     @BeforeClass
-    public void seUp() {
+    public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
