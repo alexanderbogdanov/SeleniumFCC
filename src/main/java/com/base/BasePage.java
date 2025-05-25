@@ -16,9 +16,13 @@ public class BasePage {
 
     protected WebElement find(By locator) {
         new WebDriverWait(driver, java.time.Duration.ofSeconds(5))
-                .until(ExpectedConditions.visibilityOfElementLocated(locator));
+                .until(ExpectedConditions.presenceOfElementLocated(locator));
         return driver.findElement(locator);
     }
+
+//    protected WebElement find(By locator) {
+//        return driver.findElement(locator);
+//    }
 
     protected void set(By locator, String text) {
         find(locator).clear();

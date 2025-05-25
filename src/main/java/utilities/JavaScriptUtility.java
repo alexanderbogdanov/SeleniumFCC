@@ -7,10 +7,23 @@ import org.openqa.selenium.WebElement;
 public class JavaScriptUtility extends Utility {
 
 
-    public static void scrollToElement(By locator) {
+    public static void scrollToElementJS(By locator) {
         WebElement element = driver.findElement(locator);
         String jsScript = "arguments[0].scrollIntoView(true);";
         ((JavascriptExecutor)driver).executeScript(jsScript, element);
 
+    }
+
+//    public static void clickElementJS(By locator) {
+//        WebElement element = driver.findElement(locator);
+//        String jsScript = "arguments[0].click();";
+//        ((JavascriptExecutor)driver).executeScript(jsScript, element);
+//    }
+
+    public static void clickElementJS(By locator) {
+        WebElement element = driver.findElement(locator);
+        String jsScript = "arguments[0].click();";
+        JavascriptExecutor javascriptExecutor = (JavascriptExecutor)driver;
+        javascriptExecutor.executeScript(jsScript, element);
     }
 }
