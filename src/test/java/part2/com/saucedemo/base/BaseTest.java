@@ -1,6 +1,6 @@
 package part2.com.saucedemo.base;
 
-import com.saucedemo.pages.BasePage;
+import com.base.BasePage;
 import com.saucedemo.pages.LoginPage;
 import com.saucedemo.pages.ProductsPage;
 import io.github.bonigarcia.wdm.WebDriverManager;

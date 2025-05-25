@@ -1,13 +1,16 @@
 package part3_4.com.demoqa.base;
 
 import com.demoqa.pages.HomePage;
-import com.saucedemo.pages.BasePage;
+import com.base.BasePage;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
+
+import static com.base.BasePage.delay;
+import static utilities.Utility.setUtilityDriver;
 
 public class BaseTest {
 
@@ -18,6 +21,7 @@ public class BaseTest {
 
     @BeforeClass
     public void setUp() {
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
@@ -27,12 +31,14 @@ public class BaseTest {
         driver.get(DEMOQA_URL);
         basePage = new BasePage();
         basePage.setDriver(driver);
+        setUtilityDriver();
         homePage = new HomePage();
     }
 
     @AfterClass
     public void tearDown() {
         if (driver != null) {
+            delay(3);
             driver.quit();
         }
     }
