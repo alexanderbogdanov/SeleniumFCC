@@ -10,7 +10,7 @@ public class LoginPage extends BasePage {
     private By errorMessage = By.cssSelector("[data-test=error]");
 
     // setter method to set the username
-    public  void setUsername(String username) {
+    public void setUsername(String username) {
         set(usernameField, username);
     }
 
@@ -20,6 +20,7 @@ public class LoginPage extends BasePage {
     }
 
     // transition method to click the login button (transition methods are never void, they always return a new page object)
+
     public ProductsPage clickLoginButton() {
         click(loginButton);
         return new ProductsPage();
