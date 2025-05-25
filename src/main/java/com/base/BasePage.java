@@ -20,9 +20,6 @@ public class BasePage {
         return driver.findElement(locator);
     }
 
-//    protected WebElement find(By locator) {
-//        return driver.findElement(locator);
-//    }
 
     protected void set(By locator, String text) {
         find(locator).clear();
